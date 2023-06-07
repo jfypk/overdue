@@ -72,7 +72,7 @@ def main():
           row['Overdue'] = True
           continue
       most_recent_homer_date = most_recent_homer.reset_index().head(1)['game_date'][0]
-      parsed_date = datetime.strptime(most_recent_homer_date, "%Y-%m-%d").strftime("%B %d")
+      parsed_date = datetime.strptime(most_recent_homer_date, "%Y-%m-%d").strftime("%b %-d")
       escaped_date_string = re.escape(parsed_date)
 
       pattern = f"^{escaped_date_string}.*$"
